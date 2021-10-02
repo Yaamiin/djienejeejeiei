@@ -10,39 +10,31 @@ from zaidmusic.play import cb_admin_check
 @Client.on_callback_query(filters.regex("cbstart"))
 async def cbstart(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>✨ **ʙʜᴇʟᴄᴏᴍᴇ ꜱɪʀ, ɪ ᴍ {query.message.from_user.mention}** \n
-💭 **[{BOT_NAME}](https://t.me/{BOT_USERNAME}) 𝗮𝗹𝗹𝗼𝘄 𝘆𝗼𝘂 𝘁𝗼 𝗽𝗹𝗮𝘆 𝗺𝘂𝘀𝗶𝗰 𝗼𝗻 𝗴𝗿𝗼𝘂𝗽𝘀 𝘁𝗵𝗿𝗼𝘂𝗴𝗵 𝘁𝗵𝗲 𝗻𝗲𝘄 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺'𝘀 𝘃𝗼𝗶𝗰𝗲 𝗰𝗵𝗮𝘁𝘀 𝐩𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐙𝐚𝐢𝐝 !**
-
-💡 **𝗙𝗶𝗻𝗱 𝗼𝘂𝘁 𝗮𝗹𝗹 𝘁𝗵𝗲 𝗕𝗼𝘁'𝘀 𝗰𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗮𝗻𝗱 𝗵𝗼𝘄 𝘁𝗵𝗲𝘆 𝘄𝗼𝗿𝗸 𝗯𝘆 𝗰𝗹𝗶𝗰𝗸𝗶𝗻𝗴 𝗼𝗻 𝘁𝗵𝗲 » 📚 𝗖𝗼𝗺𝗺𝗮𝗻𝗱𝘀 𝗯𝘂𝘁𝘁𝗼𝗻 !**
-
-❓ **𝗙𝗼𝗿 𝗶𝗻𝗳𝗼𝗿𝗺𝗮𝘁𝗶𝗼𝗻 𝗮𝗯𝗼𝘂𝘁 𝗮𝗹𝗹 𝗳𝗲𝗮𝘁𝘂𝗿𝗲 𝗼𝗳 𝘁𝗵𝗶𝘀 𝗯𝗼𝘁, 𝗷𝘂𝘀𝘁 𝘁𝘆𝗽𝗲 /help**
+        f"""<b>✨ **ʜᴇʏ {message.from_user.first_name}** \n
+💭 **ɪ'ᴍ[{BOT_NAME}](https://t.me/{BOT_USERNAME}) ᴀʟʟᴏᴡꜱ ᴜ ᴘʟᴀʏ ꜱᴏɴɢꜱ ɪɴ ᴠᴄ ᴄʜᴀᴛꜱ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴢᴀɪᴅ ᴍᴜꜱɪᴄ!
+☑️ ꜰɪɴᴅ ᴏᴜᴛ ᴀʟʟ ʙᴏᴛꜱ ᴄᴏᴍᴍᴀɴᴅꜱ ᴀɴᴅ ʜᴇʟᴘꜱ ʙʏ ᴄʟɪᴄᴋɪɴɢ ᴏɴ ɪɴʟɪɴᴇ ʙᴜᴛᴛᴏɴꜱ ᴀɴᴅ /help[.](https://telegra.ph/file/42fa9676f01c6fd0e15bb.jpg)
+**
 </b>""",
         reply_markup=InlineKeyboardMarkup(
             [ 
                 [
                     InlineKeyboardButton(
-                        "😚 ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ᴄʜᴀᴛꜱ ✨", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        " ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ᴄʜᴀᴛꜱ ☑️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton(
-                        "😋ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴍᴇ", callback_data="cbhowtouse")
+                        " ꜱᴇᴛᴜᴘ⚡", callback_data="cbhowtouse")
                 ],[
                     InlineKeyboardButton(
-                         "👀 ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="cbcmds"
+                        "ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 💫", url="https://github.com/Itsunknown-12/Zaid-Vc-Player")
+                ],[
+                    InlineKeyboardButton(
+                        "⚡ ᴏꜰꜰɪᴄɪᴀʟ ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/SUPERIOR_SUPPORT"
                     ),
                     InlineKeyboardButton(
-                        "💝 ᴅᴇᴠʟᴏᴘᴇʀ", url=f"https://t.me/Timesisnotwaiting")
+                        "ᴏꜰꜰɪᴄɪᴀʟ ᴄʜᴀɴɴᴇʟ ☑️", url=f"https://t.me/SUPERIOR_BOTS")
                 ],[
                     InlineKeyboardButton(
-                        "👥 ᴏꜰꜰɪᴄɪᴀʟ ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/Zaid_Support"
-                    ),
-                    InlineKeyboardButton(
-                        "📣 ᴏꜰꜰɪᴄɪᴀʟ ᴜᴘᴅᴀᴛᴇꜱ", url=f"https://t.me/Zaid_Updates")
-                ],[
-                    InlineKeyboardButton(
-                        "😈 ᴢᴀɪᴅ ᴏꜰꜰɪᴄɪᴀʟ ɢʀᴘ", url="https://t.me/Zaid_team1")
-                ],[
-                    InlineKeyboardButton(
-                        "💥 ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 💫", url="https://github.com/Itsunknown-12/Zaid-Vc-Player"
+                        " ℹ️ ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="cbcmds"
                     )
                 ]
             ]
@@ -54,7 +46,7 @@ async def cbstart(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbhelp"))
 async def cbhelp(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""<b>💡 Hello there, welcome to the help menu Powered by @Zaid_Updates !</b>
+        f"""<b>💡 Hello there, welcome to the help menu Powered by @superior_bots !</b>
 
 **in this menu you can open several available command menus, in each command menu there is also a brief explanation of each command**
 
@@ -63,33 +55,33 @@ async def cbhelp(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "💤 ʙᴀꜱɪᴄ ᴄᴍᴅꜱ", callback_data="cbbasic"
+                        "☑️ ʙᴀꜱɪᴄ ᴄᴍᴅꜱ", callback_data="cbbasic"
                     ),
                     InlineKeyboardButton(
-                        "👀 ᴀᴅᴠᴀᴄᴇᴅ ᴄᴍᴅꜱ", callback_data="cbadvanced"
+                        "➡️ ᴀᴅᴠᴀᴄᴇᴅ ᴄᴍᴅꜱ", callback_data="cbadvanced"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "💢 ᴀᴅᴍɪɴ ᴄᴍᴅꜱ", callback_data="cbadmin"
+                        "➡️ ᴀᴅᴍɪɴ ᴄᴍᴅꜱ", callback_data="cbadmin"
                     ),
                     InlineKeyboardButton(
-                        "💥 ꜱᴜᴅᴏ ᴡᴀʟᴇ ᴋ ʟɪᴇ", callback_data="cbsudo"
+                        "➡️ ꜱᴜᴅᴏ ᴡᴀʟᴇ ᴋ ʟɪᴇ", callback_data="cbsudo"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔥 ᴏᴡɴᴇʀ ᴄᴍᴅꜱ", callback_data="cbowner"
+                        "➡️ᴏᴡɴᴇʀ ᴄᴍᴅꜱ", callback_data="cbowner"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "✌ ꜰᴜɴ ᴄᴍᴅꜱ", callback_data="cbfun"
+                        "➡️ ꜰᴜɴ ᴄᴍᴅꜱ", callback_data="cbfun"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🏡ᴢ ʙᴀᴄᴋ", callback_data="cbguide"
+                        "🏡 ʙᴀᴄᴋ", callback_data="cbguide"
                     )
                 ]
             ]
@@ -130,7 +122,7 @@ async def cbbasic(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "🏡 ᴢ ʙᴀᴄᴋ", callback_data="cbhelp"
+                        "🏡 z ʙᴀᴄᴋ", callback_data="cbhelp"
                     )
                 ]
             ]
