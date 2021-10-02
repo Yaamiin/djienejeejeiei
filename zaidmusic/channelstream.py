@@ -16,12 +16,12 @@ from pyrogram.errors import UserAlreadyParticipant
 from pyrogram.types import Voice
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtube_search import YoutubeSearch
-from handlers.play import generate_cover
-from handlers.play import cb_admin_check
-from handlers.play import transcode
-from handlers.play import convert_seconds
-from handlers.play import time_to_seconds
-from handlers.play import changeImageSize
+from zaidmusic.play import generate_cover
+from zaidmusic.play import cb_admin_check
+from zaidmusic.play import transcode
+from zaidmusic.play import convert_seconds
+from zaidmusic.play import time_to_seconds
+from zaidmusic.play import changeImageSize
 from config import BOT_NAME as bn
 from config import DURATION_LIMIT
 from config import UPDATES_CHANNEL as updateschannel
