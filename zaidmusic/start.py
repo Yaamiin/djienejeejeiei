@@ -46,10 +46,10 @@ async def start_(client: Client, message: Message):
                         " ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ᴄʜᴀᴛꜱ ☑️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton(
-                        " ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴍᴇ ⚡", callback_data="cbhowtouse")
+                        " ꜱᴇᴛᴜᴘ⚡", callback_data="cbhowtouse")
                 ],[
                     InlineKeyboardButton(
-                        "ℹ️ ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="cbcmds")
+                        "ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 💫", url="https://github.com/Itsunknown-12/Zaid-Vc-Player")
                 ],[
                     InlineKeyboardButton(
                         "⚡ ᴏꜰꜰɪᴄɪᴀʟ ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/SUPERIOR_SUPPORT"
@@ -58,7 +58,7 @@ async def start_(client: Client, message: Message):
                         "ᴏꜰꜰɪᴄɪᴀʟ ᴄʜᴀɴɴᴇʟ ☑️", url=f"https://t.me/SUPERIOR_BOTS")
                 ],[
                     InlineKeyboardButton(
-                        " ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 💫", url="https://github.com/VENOMxCRAZY1/Zaid-Vc-Player"
+                        " ℹ️ ʜᴇʟᴘ ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="cbcmds"
                     )
                 ]
             ]
