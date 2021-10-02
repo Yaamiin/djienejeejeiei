@@ -22,7 +22,7 @@ from config import (
     U_BRANCH,
     UPSTREAM_REPO,
 )
-from handlers.song import get_text, humanbytes
+from zaidmusic.song import get_text, humanbytes
 from helpers.filters import command
 from helpers.database import db
 from helpers.dbtools import main_broadcast_handler
