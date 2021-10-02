@@ -1,9 +1,9 @@
 {
-    "name": "Veez Music Bot",
+    "name": "Zaid Music Bot",
     "logo": "https://telegra.ph/file/9dd9b20abcda2d7bb6725.png",
     "description": "veez music allow you to stream music trought the telegram voice chat feature.",
     "keywords": ["music", "voice chat", "telegram"],
-    "repository": "https://github.com/levina-lab/veezmusic",
+    "repository": "https://github.com/Itsunknown-12/Zaid-Vc-Player",
     "stack": "container",
     "env": {
         "SESSION_NAME": {
@@ -37,7 +37,7 @@
         "BOT_USERNAME": {
             "description": "fill with your bot username without @",
             "required": true,
-            "value": "veezmusicbot"
+            "value": "Zaid_Music_Bot"
         },
         "ASSISTANT_NAME": {
             "description": "fill with the assistant username without @",
