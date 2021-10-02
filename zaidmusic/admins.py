@@ -17,7 +17,6 @@ from config import BOT_USERNAME, COMMAND_PREFIXES, que
 from cache.admins import admins
 from zaidmusic.play import cb_admin_check
 from helpers.channelmusic import get_chat_id
-from helpers.dbtools import delcmd_is_on, delcmd_off, delcmd_on, handle_user_status
 from helpers.decorators import authorized_users_only, errors
 from helpers.filters import command, other_filters
 from helpers.helper_functions.admin_check import admin_check
