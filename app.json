@@ -1,7 +1,7 @@
 {
     "name": "Zaid Music Bot",
-    "logo": "https://telegra.ph/file/9dd9b20abcda2d7bb6725.png",
-    "description": "veez music allow you to stream music trought the telegram voice chat feature.",
+    "logo": "https://telegra.ph/file/95e785dea2717adf59de6.png",
+    "description": "Zaid music allow you to stream music trought the telegram voice chat feature.",
     "keywords": ["music", "voice chat", "telegram"],
     "repository": "https://github.com/Itsunknown-12/Zaid-Vc-Player",
     "stack": "container",
