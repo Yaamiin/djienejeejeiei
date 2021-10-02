@@ -43,25 +43,19 @@ async def start_(client: Client, message: Message):
             [ 
                 [
                     InlineKeyboardButton(
-                        "➕ ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ᴄʜᴀᴛꜱ 😄", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        " ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ᴄʜᴀᴛꜱ ☑️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
                 ],[
                     InlineKeyboardButton(
-                        "😢 ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴍᴇ", callback_data="cbhowtouse")
+                        " ʜᴏᴡ ᴛᴏ ᴜꜱᴇ ᴍᴇ ⚡", callback_data="cbhowtouse")
                 ],[
                     InlineKeyboardButton(
-                         "😄 ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="cbcmds"
-                    ),
-                    InlineKeyboardButton(
-                        "💝 ᴅᴇᴠᴇʟᴏᴘᴇʀ", url=f"https://t.me/VENOMxCRAZY")
+                        "😄 ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="cbcmds")
                 ],[
                     InlineKeyboardButton(
                         "👥 ᴏꜰꜰɪᴄɪᴀʟ ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/VENM_xd"
                     ),
                     InlineKeyboardButton(
                         "🔥 ᴏꜰꜰɪᴄɪᴀʟ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/V3N0M_0P")
-                ],[
-                    InlineKeyboardButton(
-                        "😁 ᴏꜰꜰɪᴄɪᴀʟ ᴢᴀɪᴅ ᴄʜᴀᴛ", url="https://t.me/VENM_xd")
                 ],[
                     InlineKeyboardButton(
                         "😉 ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ😍", url="https://github.com/VENOMxCRAZY1/Zaid-Vc-Player"
