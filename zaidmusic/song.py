@@ -35,7 +35,7 @@ def song(_, message):
         link = f"https://youtube.com{results[0]['url_suffix']}"
         title = results[0]["title"][:40]
         thumbnail = results[0]["thumbnails"][0]
-        thumb_name = f"thumb-{title}.jpg"
+        thumb_name = f"{title}.jpg"
         thumb = requests.get(thumbnail, allow_redirects=True)
         open(thumb_name, "wb").write(thumb.content)
         duration = results[0]["duration"]
@@ -183,7 +183,7 @@ def time_formatter(milliseconds: int) -> str:
 
 
 ydl_opts = {
-    "format": "bestaudio/best",
+    "format": "bestaudio[ext=m4a]",
     "writethumbnail": True,
     "postprocessors": [
         {
@@ -238,7 +238,7 @@ async def vsong(client, message):
         link = f"https://youtube.com{results[0]['url_suffix']}"
         title = results[0]["title"][:40]
         thumbnail = results[0]["thumbnails"][0]
-        thumb_name = f"thumb{title}.jpg"
+        thumb_name = f"{title}.jpg"
         thumb = requests.get(thumbnail, allow_redirects=True)
         open(thumb_name, "wb").write(thumb.content)
         results[0]["duration"]
