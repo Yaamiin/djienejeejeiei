@@ -498,7 +498,7 @@ async def ytplay(_, message: Message):
         query += " " + str(i)
     print(query)
     await lel.edit("🔄 **ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ꜱᴜᴘᴇʀɪᴏʀ ꜱᴇʀᴠᴇʀ...**")
-    ydl_opts = {"format": "bestaudio/best"}
+    ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         url = f"https://youtube.com{results[0]['url_suffix']}"
