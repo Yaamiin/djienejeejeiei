@@ -1,26 +1,21 @@
 from asyncio import QueueEmpty
 
-from pyrogram import Client, filters
-from pyrogram.types import (
-    CallbackQuery,
-    ChatPermissions,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message,
-)
-
 from callsmusic import callsmusic
 from callsmusic.queues import queues
-from config import BOT_USERNAME, COMMAND_PREFIXES, que
+from config import BOT_USERNAME, que
 from cache.admins import admins
 from zaidmusic.play import cb_admin_check
 from helpers.channelmusic import get_chat_id
 from helpers.dbtools import delcmd_is_on, delcmd_off, delcmd_on, handle_user_status
 from helpers.decorators import authorized_users_only, errors
 from helpers.filters import command, other_filters
-from helpers.helper_functions.admin_check import admin_check
-from helpers.helper_functions.extract_user import extract_user
-from helpers.helper_functions.string_handling import extract_time
+from pyrogram import Client, filters
+from pyrogram.types import (
+    CallbackQuery,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+)
 
 
 @Client.on_message()
@@ -61,7 +56,7 @@ async def update_admin(client, message):
 @authorized_users_only
 async def controlset(_, message: Message):
     await message.reply_text(
-        "**💡 opened music player control menu!**\n\n**💭 you can control the music player just by pressing one of the buttons below**",
+        "💡 **here is the control menu of bot :**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -70,10 +65,9 @@ async def controlset(_, message: Message):
                 ],
                 [
                     InlineKeyboardButton("⏩ skip", callback_data="cbskip"),
-                    InlineKeyboardButton("⏹ end", callback_data="cbend"),
+                    InlineKeyboardButton("⏹ stop", callback_data="cbend"),
                 ],
                 [InlineKeyboardButton("⛔ anti cmd", callback_data="cbdelcmds")],
-                [InlineKeyboardButton("🛄 group tools", callback_data="cbgtools")],
                 [InlineKeyboardButton("🗑 Close", callback_data="close")],
             ]
         ),
@@ -88,11 +82,11 @@ async def pause(_, message: Message):
     if (chat_id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[chat_id] == "paused"
     ):
-        await message.reply_text("❌ no music is playing.")
+        await message.reply_text("❌ **no music is currently playing**")
     else:
         callsmusic.pytgcalls.pause_stream(chat_id)
         await message.reply_text(
-            "⏸ **Track paused.**\n\n• **To resume the playback, use the** » `/resume` command."
+            "⏸ **Track paused.**\n\n• **To resume the playback, use the**\n» `/resume` command."
         )
 
 
@@ -104,11 +98,11 @@ async def resume(_, message: Message):
     if (chat_id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[chat_id] == "playing"
     ):
-        await message.reply_text("❌ no music is paused.")
+        await message.reply_text("❌ **no music is paused**")
     else:
         callsmusic.pytgcalls.resume_stream(chat_id)
         await message.reply_text(
-            "▶️ **Track resumed.**\n\n• **To pause the playback, use the** » `/pause` command."
+            "▶️ **Track resumed.**\n\n• **To pause the playback, use the**\n» `/pause` command."
         )
 
 
@@ -118,7 +112,7 @@ async def resume(_, message: Message):
 async def stop(_, message: Message):
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❌ no music is playing.")
+        await message.reply_text("❌ **no music is currently playing**")
     else:
         try:
             queues.clear(chat_id)
@@ -136,7 +130,7 @@ async def skip(_, message: Message):
     global que
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❌ no music is playing.")
+        await message.reply_text("❌ **no music is currently playing**")
     else:
         queues.task_done(chat_id)
 
@@ -222,7 +216,9 @@ async def cbpause(_, query: CallbackQuery):
     if (query.message.chat.id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[query.message.chat.id] == "paused"
     ):
-        await query.edit_message_text("❌ no music is playing", reply_markup=BACK_BUTTON)
+        await query.edit_message_text(
+            "❌ **no music is currently playing**", reply_markup=BACK_BUTTON
+        )
     else:
         callsmusic.pytgcalls.pause_stream(query.message.chat.id)
         await query.edit_message_text(
@@ -237,7 +233,9 @@ async def cbresume(_, query: CallbackQuery):
     if (query.message.chat.id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[query.message.chat.id] == "resumed"
     ):
-        await query.edit_message_text("❌ no music is paused", reply_markup=BACK_BUTTON)
+        await query.edit_message_text(
+            "❌ **no music is paused**", reply_markup=BACK_BUTTON
+        )
     else:
         callsmusic.pytgcalls.resume_stream(query.message.chat.id)
         await query.edit_message_text(
@@ -250,7 +248,9 @@ async def cbresume(_, query: CallbackQuery):
 async def cbend(_, query: CallbackQuery):
     get_chat_id(query.message.chat)
     if query.message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await query.edit_message_text("❌ no music is playing", reply_markup=BACK_BUTTON)
+        await query.edit_message_text(
+            "❌ **no music is currently playing**", reply_markup=BACK_BUTTON
+        )
     else:
         try:
             queues.clear(query.message.chat.id)
@@ -270,7 +270,9 @@ async def cbskip(_, query: CallbackQuery):
     global que
     chat_id = get_chat_id(query.message.chat)
     if query.message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await query.edit_message_text("❌ no music is playing", reply_markup=BACK_BUTTON)
+        await query.edit_message_text(
+            "❌ **no music is currently playing**", reply_markup=BACK_BUTTON
+        )
     else:
         queues.task_done(query.message.chat.id)
 
@@ -287,183 +289,5 @@ async def cbskip(_, query: CallbackQuery):
     if not qeue:
         return
     await query.edit_message_text(
-        "⏭ **you've skipped to the next song**", reply_markup=BACK_BUTTON
+        "⏭ **You've skipped to the next song**", reply_markup=BACK_BUTTON
     )
-
-
-# (C) Veez Music Project
-
-# ban & unban function
-
-
-@Client.on_message(filters.command("b", COMMAND_PREFIXES))
-@authorized_users_only
-async def ban_user(_, message):
-    is_admin = await admin_check(message)
-    if not is_admin:
-        return
-
-    user_id, user_first_name = extract_user(message)
-
-    try:
-        await message.chat.kick_member(user_id=user_id)
-    except Exception as error:
-        await message.reply_text(str(error))
-    else:
-        if str(user_id).lower().startswith("@"):
-            await message.reply_text(
-                "✅ successfully banned " f"{user_first_name}" " from this group !"
-            )
-        else:
-            await message.reply_text(
-                "✅ banned "
-                f"<a href='tg://user?id={user_id}'>"
-                f"{user_first_name}"
-                "</a>"
-                " from this group !"
-            )
-
-
-@Client.on_message(filters.command("tb", COMMAND_PREFIXES))
-@authorized_users_only
-async def temp_ban_user(_, message):
-    is_admin = await admin_check(message)
-    if not is_admin:
-        return
-
-    if len(message.command) <= 1:
-        return
-
-    user_id, user_first_name = extract_user(message)
-
-    until_date_val = extract_time(message.command[1])
-    if until_date_val is None:
-        await message.reply_text(
-            (
-                "the specified time type is invalid. " "use m, h, or d, format time: {}"
-            ).format(message.command[1][-1])
-        )
-        return
-
-    try:
-        await message.chat.kick_member(user_id=user_id, until_date=until_date_val)
-    except Exception as error:
-        await message.reply_text(str(error))
-    else:
-        if str(user_id).lower().startswith("@"):
-            await message.reply_text(
-                "✅ temporarily banned "
-                f"{user_first_name}"
-                f" for {message.command[1]}!"
-            )
-        else:
-            await message.reply_text(
-                "✅ temporarily banned "
-                f"<a href='tg://user?id={user_id}'>"
-                "from this group, "
-                "</a>"
-                f" for {message.command[1]}!"
-            )
-
-
-@Client.on_message(filters.command(["ub", "um"], COMMAND_PREFIXES))
-@authorized_users_only
-async def un_ban_user(_, message):
-    is_admin = await admin_check(message)
-    if not is_admin:
-        return
-
-    user_id, user_first_name = extract_user(message)
-
-    try:
-        await message.chat.unban_member(user_id=user_id)
-    except Exception as error:
-        await message.reply_text(str(error))
-    else:
-        if str(user_id).lower().startswith("@"):
-            await message.reply_text(
-                "✅ ok accepted, user "
-                f"{user_first_name} can"
-                " join to this group again!"
-            )
-        else:
-            await message.reply_text(
-                "✅ ok, now "
-                f"<a href='tg://user?id={user_id}'>"
-                f"{user_first_name}"
-                "</a> is not"
-                " restricted again!"
-            )
-
-
-@Client.on_message(filters.command("m", COMMAND_PREFIXES))
-async def mute_user(_, message):
-    is_admin = await admin_check(message)
-    if not is_admin:
-        return
-
-    user_id, user_first_name = extract_user(message)
-
-    try:
-        await message.chat.restrict_member(
-            user_id=user_id, permissions=ChatPermissions()
-        )
-    except Exception as error:
-        await message.reply_text(str(error))
-    else:
-        if str(user_id).lower().startswith("@"):
-            await message.reply_text(
-                "✅ okay,🏻 " f"{user_first_name}" " successfully muted !"
-            )
-        else:
-            await message.reply_text(
-                "🏻✅ okay, "
-                f"<a href='tg://user?id={user_id}'>"
-                "now is"
-                "</a>"
-                " muted !"
-            )
-
-
-@Client.on_message(filters.command("tm", COMMAND_PREFIXES))
-async def temp_mute_user(_, message):
-    is_admin = await admin_check(message)
-    if not is_admin:
-        return
-
-    if len(message.command) <= 1:
-        return
-
-    user_id, user_first_name = extract_user(message)
-
-    until_date_val = extract_time(message.command[1])
-    if until_date_val is None:
-        await message.reply_text(
-            (
-                "The specified time type is invalid. " "use m, h, or d, format time: {}"
-            ).format(message.command[1][-1])
-        )
-        return
-
-    try:
-        await message.chat.restrict_member(
-            user_id=user_id, permissions=ChatPermissions(), until_date=until_date_val
-        )
-    except Exception as error:
-        await message.reply_text(str(error))
-    else:
-        if str(user_id).lower().startswith("@"):
-            await message.reply_text(
-                "Muted for a while! "
-                f"{user_first_name}"
-                f" muted for {message.command[1]}!"
-            )
-        else:
-            await message.reply_text(
-                "Muted for a while! "
-                f"<a href='tg://user?id={user_id}'>"
-                "is"
-                "</a>"
-                " now "
-                f" muted, for {message.command[1]}!"
-            )
