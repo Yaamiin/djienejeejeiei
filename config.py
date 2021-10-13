@@ -18,6 +18,7 @@ BG_IMAGE = getenv("BG_IMAGE", "https://telegra.ph/file/abda83eda086dc5b187c3.png
 THUMB_IMG = getenv("THUMB_IMG", "https://telegra.ph/file/abda83eda086dc5b187c3.png")
 AUD_IMG = getenv("AUD_IMG", "https://telegra.ph/file/abda83eda086dc5b187c3.png")
 QUE_IMG = getenv("QUE_IMG", "https://telegra.ph/file/5aa50f1f5315ee259a409.png")
+ALIVE_IMG = getenv("QUE_IMG"), "https://telegra.ph/file/5aa50f1f5315ee259a409.png")
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
 BOT_USERNAME = getenv("BOT_USERNAME", "Zaid2_Robot")
