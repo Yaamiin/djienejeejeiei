@@ -13,8 +13,9 @@ from pyrogram.errors import (
     PeerIdInvalid,
     UserIsBlocked,
 )
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-from config import BROADCAST_AS_COPY, GROUP_SUPPORT, LOG_CHANNEL
+from config import BROADCAST_AS_COPY, GROUP_SUPPORT, UPDATES_CHANNEL, LOG_CHANNEL
 from helpers.database import db, dcmdb
 
 
