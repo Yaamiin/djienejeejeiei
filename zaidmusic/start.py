@@ -11,9 +11,9 @@ from config import (
     OWNER_NAME,
     UPDATES_CHANNEL,
 )
-from handlers import __version__
+from zaidmusic import __version__
 from helpers.decorators import sudo_users_only
-from zaidmusic.filters import command
+from helpers.filters import command
 from pyrogram import Client, filters
 from pyrogram import __version__ as pyrover
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
