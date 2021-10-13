@@ -13,7 +13,7 @@ from config import (
 )
 from handlers import __version__
 from helpers.decorators import sudo_users_only
-from helpers.filters import command
+from zaidmusic.filters import command
 from pyrogram import Client, filters
 from pyrogram import __version__ as pyrover
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
