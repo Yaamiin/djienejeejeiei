@@ -5,15 +5,9 @@ from typing import Callable
 
 import aiofiles
 import aiohttp
+import converter
 import ffmpeg
 import requests
-from PIL import Image, ImageDraw, ImageFont
-from pyrogram import Client, filters
-from pyrogram.errors import UserAlreadyParticipant
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-from youtube_search import YoutubeSearch
-
-import converter
 from cache.admins import admins as a
 from callsmusic import callsmusic
 from callsmusic.callsmusic import client as USER
