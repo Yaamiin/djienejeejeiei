@@ -62,11 +62,12 @@ async def start_(client: Client, message: Message):
             [ 
                 [
                     InlineKeyboardButton(
-                        " ᴀᴅᴅ ᴍᴇ ᴛᴏ ᴜʀ ᴄʜᴀᴛꜱ ☑️", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")
+                        "➕ Add me to your Group ➕",
+                        url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
+                    )
                 ],[
-                    InlineKeyboardButton(
-                        " ꜱᴇᴛᴜᴘ⚡", callback_data="cbhowtouse")
-                ],[
+                    InlineKeyboardButton(" ꜱᴇᴛᴜᴘ⚡", callback_data="cbhowtouse")],
+                [
                     InlineKeyboardButton(
                         "ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ 💫", url="https://github.com/Itsunknown-12/Zaid-Vc-Player")
                 ],[
@@ -86,25 +87,31 @@ async def start_(client: Client, message: Message):
     )
 
 
-@Client.on_message(command(["start", f"start@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(
+    command(["start", f"start@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+)
 async def start(client: Client, message: Message):
     current_time = datetime.utcnow()
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
-    await message.reply_text(
-        f"""✅ **ᴢᴀɪᴅ ɪꜱ ʀᴜɴɴɪɴɢ**\n<b>💠 **ᴜᴘᴛɪᴍᴇ:**</b> `{uptime}`""",
-        reply_markup=InlineKeyboardMarkup(
+
+    keyboard = InlineKeyboardMarkup(
+        [
             [
-                [
-                    InlineKeyboardButton(
-                        "💫 ꜱᴜᴘᴘᴏʀᴛ", url=f"https://t.me/SUPERIOR_SUPPORT"
-                    ),
-                    InlineKeyboardButton(
-                        "ᴄʜᴀɴɴᴇʟ ☑️", url=f"https://t.me/SUPERIOR_BOTS"
-                    )
-                ]
+                InlineKeyboardButton("✨ Group", url=f"https://t.me/{GROUP_SUPPORT}"),
+                InlineKeyboardButton(
+                    "📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                ),
             ]
-        )
+        ]
+    )
+
+    alive = f"**Hello {message.from_user.mention}, i'm {BOT_NAME}**\n\n✨ Bot is working normally\n🍀 My Master: [{ALIVE_NAME}](https://t.me/{OWNER_NAME})\n✨ Bot Version: `v{__version__}`\n🍀 Pyrogram Version: `{pyrover}`\n✨ Python Version: `{__python_version__}`\n🍀 Uptime Status: `{uptime}`\n\n**Thanks for Adding me here, for playing music on your Group voice chat** ❤"
+
+    await message.reply_photo(
+        photo=f"{ALIVE_IMG}",
+        caption=alive,
+        reply_markup=keyboard,
     )
 
 @Client.on_message(command(["help", f"help@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
