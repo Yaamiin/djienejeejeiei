@@ -29,6 +29,8 @@ OWNER_NAME = getenv("OWNER_NAME", "Timesisnotwaiting")
 PMPERMIT = getenv("PMPERMIT", "ENABLE")
 # fill with your id as the owner of the bot
 OWNER_ID = int(os.environ.get("OWNER_ID"))
+#fill there Ur Account username
+ALIVE_NAME = getenv("ALIVE_NAME", "Timesisnotwaiting")
 DATABASE_URL = os.environ.get("DATABASE_URL")  # fill with your mongodb url
 # make a private channel and get the channel id
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
