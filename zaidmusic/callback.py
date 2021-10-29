@@ -50,7 +50,7 @@ async def cbhelp(_, query: CallbackQuery):
 
 **in this menu you can open several available command menus, in each command menu there is also a brief explanation of each command**
 
-⚡ __Powered by {BOT_NAME} A.I__""",
+⚡ __Powered by {BOT_NAME} ᴢᴀɪᴅ__""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
