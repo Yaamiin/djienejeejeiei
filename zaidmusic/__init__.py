@@ -1,1 +1,6 @@
-__version__ = "1.0.8"
+__version__ = "0.6.0"
+
+# === SETUP === #
+
+BOT_ID = 0
+USERBOT_ID = 0
