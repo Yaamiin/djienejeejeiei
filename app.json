@@ -24,16 +24,6 @@
             "required": true,
             "value": ""
         },
-        "DATABASE_URL": {
-            "description": "fill with the mongodb url you get from cloud.mongodb.com",
-            "required": true,
-            "value": ""
-        },
-        "LOG_CHANNEL": {
-            "description": "create a private channel and get the channel id, add your bot as admin to the channel too",
-            "required": true,
-            "value": ""
-        },
         "BOT_USERNAME": {
             "description": "fill with your bot username without @",
             "required": true,
@@ -43,11 +33,6 @@
             "description": "fill with the assistant username without @",
             "required": true,
             "value": "Zaid_Assistant"
-        },
-        "BG_IMAGE": {
-            "description": "fill with your costum background image link",
-            "required": false,
-            "value": "https://telegra.ph/file/abda83eda086dc5b187c3.png"
         },
         "OWNER_NAME": {
             "description": "fill with your username without @",
