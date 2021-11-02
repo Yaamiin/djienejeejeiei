@@ -1,0 +1,10 @@
+solidAPI==0.1.8.4
+youtube-search==2.1.0
+git+https://github.com/pyrogram/pyrogram@master
+py-tgcalls==0.8.1rc1
+tgcrypto==1.2.2
+aiohttp[speedups]
+requests==2.26.0
+python-dotenv==0.19.1
+pafy==0.5.5
+youtube-dl==2021.6.6
