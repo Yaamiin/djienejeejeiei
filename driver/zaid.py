@@ -7,7 +7,7 @@ bot = Client(
     API_ID,
     API_HASH,
     bot_token=BOT_TOKEN,
-    plugins={"root": "program"},
+    plugins={"root": "zaidmusic"},
 )
 
 user = Client(
