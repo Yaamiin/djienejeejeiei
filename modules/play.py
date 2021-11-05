@@ -486,7 +486,7 @@ async def ytplay(_, message: Message):
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i> {user.first_name} Userbot not in this chat, Ask admin to send /play command for first time or add {user.first_name} manually</i>"
+            f"<i> {user.first_name} Userbot not in this chat, Ask admin to send /play command for first time or add {ASSISTANT_NAME} manually</i>"
         )
         return
     await lel.edit("🔎>")
@@ -523,7 +523,7 @@ async def ytplay(_, message: Message):
             secmul *= 60
         if (dur / 60) > DURATION_LIMIT:
             await lel.edit(
-                f"❌ Videos longer than {DURATION_LIMIT} minutes!"
+                f"❌ **ᴍᴜꜱɪᴄ ᴡɪᴛʜ ᴅᴜʀᴀᴛɪᴏɴ ᴍᴏʀᴇ ᴛʜᴀɴ** {DURATION_LIMIT} "
             )
             return
     except:
@@ -533,13 +533,15 @@ async def ytplay(_, message: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Menu ", callback_data="menu"),
-                InlineKeyboardButton("🗑️", callback_data="cls"),
+                InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
+                InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
             ],
             [
-                InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
-                InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
-            ]
+                InlineKeyboardButton(
+                    "☑️ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/Superior_Bots"
+                ),
+                InlineKeyboardButton("ꜱᴜᴘᴘᴏʀᴛ ⚡", url=f"https://t.me/Superior_Support"),
+            ],
         ]
     )
     requested_by = message.from_user.first_name
@@ -556,7 +558,7 @@ async def ytplay(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"#️⃣ {position}!",
+            caption=f"☑️ **ꜱᴏɴɢ ᴀᴅᴅᴇᴅ ᴛᴏ Qᴜᴇᴜᴇ »** {position}!",
             reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -573,12 +575,12 @@ async def ytplay(_, message: Message):
         try:
             await callsmusic.set_stream(chat_id, file)
         except:
-            message.reply("Group Call is not connected or I can't join it")
+            message.reply("😕 **ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ɴᴏᴛ ꜰᴏᴜɴᴅ**\n\n» ᴘʟᴇᴀꜱᴇ ᴛᴜʀɴ ᴏɴ ᴛʜᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ꜰɪʀꜱᴛ")
             return
         await message.reply_photo(
             photo="final.png",
             reply_markup=keyboard,
-            caption="☑️ <b>Playing</b> By {} 😎".format(
+            caption="☑️ ᴢᴀɪᴅ ᴜꜱᴇʀ ʙʏ {} 😎".format(
                 message.from_user.mention()
             ),
         )
@@ -675,14 +677,15 @@ async def jiosaavn(client: Client, message_: Message):
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Menu ", callback_data="menu"),
-                InlineKeyboardButton("🗑️ ", callback_data="cls"),
+                InlineKeyboardButton("🖱 ᴍᴇɴᴜ", callback_data="menu"),
+                InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="cls"),
             ],
             [
                 InlineKeyboardButton(
-                    text="Updates Channel", url=f"https://t.me/Superior_bots"
-                )
-            ]
+                    "☑️ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/Superior_Bots"
+                ),
+                InlineKeyboardButton("ꜱᴜᴘᴘᴏʀᴛ ⚡", url=f"https://t.me/Superior_Support"),
+            ],
         ]
     )
     file = await convert(wget.download(slink))
@@ -700,7 +703,7 @@ async def jiosaavn(client: Client, message_: Message):
             chat_id=message_.chat.id,
             reply_markup=keyboard,
             photo="final.png",
-            caption=f"✯{bn}✯=#️⃣  {position}",
+            caption=f"☑️ **ꜱᴏɴɢ ᴀᴅᴅᴇᴅ ᴛᴏ Qᴜᴇᴜᴇ »**  {position}",
         )
 
     else:
@@ -715,7 +718,7 @@ async def jiosaavn(client: Client, message_: Message):
         try:
             await callsmusic.set_stream(chat_id, file)
         except:
-            res.edit("Group call is not connected of I can't join it")
+            res.edit("😕 **ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ɴᴏᴛ ꜰᴏᴜɴᴅ**\n\n» ᴘʟᴇᴀꜱᴇ ᴛᴜʀɴ ᴏɴ ᴛʜᴇ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ ꜰɪʀꜱᴛ")
             return
     await res.edit("Generating Thumbnail.")
     await generate_cover(requested_by, sname, ssingers, sduration, sthumb)
@@ -724,6 +727,6 @@ async def jiosaavn(client: Client, message_: Message):
         chat_id=message_.chat.id,
         reply_markup=keyboard,
         photo="final.png",
-        caption=f"Playing {sname} Via saavn",
+        caption=f"ᴢᴀɪᴅ ᴜꜱᴇʀ ʙʏ {sname} Via saavn",
     )
     os.remove("final.png")
