@@ -2,7 +2,6 @@ pyrogram
 tgcrypto
 pytgcalls==2.1.0
 python-dotenv
-yt-dlp
 youtube-search-python
 requests
 aiohttp
