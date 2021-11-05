@@ -1,78 +1,86 @@
 {
-    "name": "Zaid Music Bot",
-    "logo": "https://telegra.ph/file/95e785dea2717adf59de6.png",
-    "description": "Zaid music allow you to stream music trought the telegram voice chat feature.",
-    "keywords": ["music", "voice chat", "telegram"],
-    "repository": "https://github.com/Itsunknown-12/Zaid-Vc-Player",
-    "stack": "container",
-    "env": {
-        "SESSION_NAME": {
-            "description": "fill with the pyrogram session string",
-            "required": true
-        },
-        "BOT_TOKEN": {
-            "description": "fill with your bot token from @BotFather",
-            "required": true
-        },
-        "BOT_NAME": {
-            "description": "fill with your music bot name.",
-            "required": true,
-            "value": ""
-        },
-        "OWNER_ID": {
-            "description": "fill with your telegram id as the owner of the bot",
-            "required": true,
-            "value": ""
-        },
-        "BOT_USERNAME": {
-            "description": "fill with your bot username without @",
-            "required": true,
-            "value": "Zaid_Music_Bot"
-        },
-        "ASSISTANT_NAME": {
-            "description": "fill with the assistant username without @",
-            "required": true,
-            "value": "Zaid_Assistant"
-        },
-        "OWNER_NAME": {
-            "description": "fill with your username without @",
-            "required": false,
-            "value": "Timesisnotwaiting"
-        },
-        "API_ID": {
-            "description": "your Api ID from my.telegram.org/apps",
-            "required": true
-        },
-        "API_HASH": {
-            "description": "your Api Hash from my.telegram.org/apps",
-            "required": true
-        },
-        "SUDO_USERS": {
-            "description": "fill with the user id who can access all function in your bot (separate with space).",
-            "required": true
-        },
-        "DURATION_LIMIT": {
-            "description": "max duration for music to download (in minutes).",
-            "required": true,
-            "value": "40"
-        },
-        "UPDATES_CHANNEL": {
-            "description": "if you have channel fill the channel username here without @",
-            "required": false,
-            "value": "Superior_Bots"
-        },
-        "GROUP_SUPPORT": {
-            "description": "if you have group fill the group username here without @",
-            "required": false,
-            "value": "Superior_support"
-        }
+  "name": "DaisyXMusic",
+  "logo": "https://telegra.ph/file/36ff1b571aa11df5812de.jpg",
+  "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
+  "keywords": ["music", "voicechat", "telegram"],
+  "repository": "https://github.com/TeamDaisyX/DaisyXMusic",
+  "stack": "container",
+  "buildpacks": [
+   {
+     "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+   },
+   {
+     "url": "heroku/python"
+   }   
+  ],        
+  "env": {
+    "SESSION_NAME": {
+      "description": "Pyrogram session string",
+      "required": true
     },
-    "buildpacks": [
-    {
-      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+    "BOT_TOKEN": {
+      "description": "A bot token from @BotFather",
+      "required": true
     },
-    {
-      "url": "heroku/python"
+    "BOT_USERNAME": {
+      "description": "Your bot's username without @",
+      "required": true
+    },
+    "BOT_NAME": {
+      "description": "Your MusicPlayer Bot Name.",
+      "required": false,
+      "value": ""
+    },
+    "SUPPORT_GROUP": {
+      "description": "Your MusicPlayer support group without @ [Leave this if you don't have one]",
+      "required": false,
+      "value": "DaisySupport_Official"
+    },
+    "PROJECT_NAME": {
+      "description": "Your MusicPlayer project Name.",
+      "required": false,
+      "value": "DaisyXMusic v5"
+    },
+    "ASSISTANT_NAME": {
+      "description": "Your MusicPlayer's assistant Username without @.",
+      "required": true
+    },
+    "ARQ_API_KEY": {
+      "description": "Get from @ARQRobot.",
+      "required": false,
+      "value": ""
+    },    
+    "BG_IMAGE": {
+      "description": "BG image of bot (Use transparent one) [IGNORE].",
+      "required": false,
+      "value": " https://telegra.ph/file/dcfdf612e499eef0e0b1f.png"
+    },     
+    "UPDATES_CHANNEL": {
+      "description": "Updates Channel without @ [Leave this if you don't have one].",
+      "required": false,
+      "value": "DaisyXupdates"
+    },    
+    "API_ID": {
+      "description": "App ID from my.telegram.org/apps",
+      "required": true
+    },
+    "PMPERMIT": {
+      "description": "Change to turn off",
+      "required": false,
+      "value": "ENABLE"
+    },    
+    "API_HASH": {
+      "description": "App hash from my.telegram.org/apps",
+      "required": true
+    },
+    "SUDO_USERS": {
+      "description": "List of user IDs counted as admin everywhere (separated by space).",
+      "required": true
+    },
+    "DURATION_LIMIT": {
+      "description": "Max audio duration limit for downloads (minutes).",
+      "required": true,
+      "value": "10"
     }
-  ]
+  }
 }

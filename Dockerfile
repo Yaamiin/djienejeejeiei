@@ -1,9 +1,8 @@
-FROM nikolaik/python-nodejs:python3.9-nodejs16
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends ffmpeg \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+FROM python:3.9.7-slim-buster
+RUN apt-get update && apt-get upgrade -y
+RUN apt-get install git curl python3-pip ffmpeg -y
+RUN python3.9 -m pip install -U pip
 COPY . /app
 WORKDIR /app
-RUN pip3 install --no-cache-dir --upgrade --requirement requirements.txt
-CMD ["python3", "main.py"]
+RUN python3.9 -m pip install -U -r requirements.txt
+CMD python3.9 main.py
