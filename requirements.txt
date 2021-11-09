@@ -14,5 +14,5 @@ python-arq
 future
 psutil
 wget
-youtube-dl
+yt_dlp
 tswift
