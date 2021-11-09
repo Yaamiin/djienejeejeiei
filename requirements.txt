@@ -14,5 +14,5 @@ python-arq
 future
 psutil
 wget
-yt_dlp
+yt-dlp
 tswift
