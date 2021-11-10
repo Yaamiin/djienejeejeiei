@@ -14,5 +14,5 @@ python-arq
 future
 psutil
 wget
-yt-dlp
+git+https://github.com/Itsunknown-12/yt-dl@master
 tswift
