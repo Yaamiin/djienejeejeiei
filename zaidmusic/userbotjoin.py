@@ -1,14 +1,14 @@
 import asyncio
+from callsmusic.callsmusic import client as USER
 from config import BOT_USERNAME, SUDO_USERS
-from driver.decorators import authorized_users_only, sudo_users_only, errors
-from driver.filters import command, other_filters
-from driver.zaid import user as USER
+from helpers.decorators import authorized_users_only, sudo_users_only, errors
+from helpers.filters import command
 from pyrogram import Client, filters
 from pyrogram.errors import UserAlreadyParticipant
 
 
 @Client.on_message(
-    command(["userbotjoin", f"userbotjoin@{BOT_USERNAME}"]) & ~filters.private & ~filters.bot
+    command(["join", f"join@{BOT_USERNAME}"]) & ~filters.private & ~filters.bot
 )
 @authorized_users_only
 @errors
@@ -16,7 +16,7 @@ async def join_group(client, message):
     chid = message.chat.id
     try:
         invitelink = await client.export_chat_invite_link(chid)
-    except BaseException:
+    except:
         await message.reply_text(
             "• **i'm not have permission:**\n\n» ❌ __Add Users__",
         )
@@ -24,7 +24,7 @@ async def join_group(client, message):
 
     try:
         user = await USER.get_me()
-    except BaseException:
+    except:
         user.first_name = "music assistant"
 
     try:
@@ -43,14 +43,15 @@ async def join_group(client, message):
     )
 
 
-@Client.on_message(command(["userbotleave",
-                            f"leave@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
+@Client.on_message(
+    command(["leave", f"leave@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+)
 @authorized_users_only
-async def leave_one(client, message):
+async def leave_group(client, message):
     try:
         await USER.send_message(message.chat.id, "✅ userbot successfully left chat")
         await USER.leave_chat(message.chat.id)
-    except BaseException:
+    except:
         await message.reply_text(
             "❌ **userbot couldn't leave your group, may be floodwaits.**\n\n**» or manually kick userbot from your group**"
         )
@@ -74,7 +75,7 @@ async def leave_all(client, message):
             await lol.edit(
                 f"Userbot leaving all group...\n\nLeft: {left} chats.\nFailed: {failed} chats."
             )
-        except BaseException:
+        except:
             failed += 1
             await lol.edit(
                 f"Userbot leaving...\n\nLeft: {left} chats.\nFailed: {failed} chats."
