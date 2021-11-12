@@ -1,6 +1,6 @@
 import asyncio
 from callsmusic.callsmusic import client as USER
-from config import BOT_USERNAME, SUDO_USERS
+from config import BOT_USERNAME, SUDO_USERS, GROUP_SUPPORT
 from helpers.decorators import authorized_users_only, sudo_users_only, errors
 from helpers.filters import command
 from pyrogram import Client, filters
@@ -8,7 +8,7 @@ from pyrogram.errors import UserAlreadyParticipant
 
 
 @Client.on_message(
-    command(["join", f"join@{BOT_USERNAME}"]) & ~filters.private & ~filters.bot
+    command(["join", f"userbotjoin"]) & ~filters.private & ~filters.bot
 )
 @authorized_users_only
 @errors
@@ -34,8 +34,8 @@ async def join_group(client, message):
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"🛑 Flood Wait Error 🛑 \n\n**userbot couldn't join your group due to heavy join requests for userbot**"
-            "\n\n**or add assistant manually to your Group and try again**",
+            f"🔴 **ꜰʟᴏᴏᴅ ᴡᴀɪᴛ ᴇʀʀᴏʀ** 🔴 \n\n**ʜᴇʟᴘᴇʀ ᴜꜱᴇʀʙᴏᴛ ᴜɴᴀʙʟᴇ ᴛᴏ ᴊᴏɪɴ ᴜʀ ᴄʜᴀᴛ @{ASSISTANT_NAME} ᴘʟᴢ ᴀᴅᴅ ᴍᴀɴᴜᴀʟʟʏ .**"
+            f"\n\n**ᴏʀ ᴄᴏɴᴛᴀᴄᴛ @{GROUP_SUPPORT}.**",
         )
         return
     await message.reply_text(
