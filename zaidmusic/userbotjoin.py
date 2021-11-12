@@ -1,6 +1,6 @@
 import asyncio
 from callsmusic.callsmusic import client as USER
-from config import BOT_USERNAME, SUDO_USERS, GROUP_SUPPORT
+from config import BOT_USERNAME, SUDO_USERS, GROUP_SUPPORT, ASSISTANT_NAME
 from helpers.decorators import authorized_users_only, sudo_users_only, errors
 from helpers.filters import command
 from pyrogram import Client, filters
