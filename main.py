@@ -1,29 +1,26 @@
-import asyncio
-
-from program import BOT_ID, USERBOT_ID
-from driver.zaid import call_py, bot, user
+import requests
 from pytgcalls import idle
+from callsmusic import run
+from handlers import __version__
+from pyrogram import Client as Bot
+from config import API_HASH, API_ID, BG_IMAGE, BOT_TOKEN
 
 
-async def all_info(bot, user):
-    global BOT_ID, USERBOT_ID
-    getme = await bot.get_me()
-    getme1 = await user.get_me()
-    BOT_ID = getme.id
-    USERBOT_ID = getme1.id
+response = requests.get(BG_IMAGE)
+with open("./etc/foreground.png", "wb") as file:
+    file.write(response.content)
 
 
-async def mulai_bot():
-    print("[INFO]: STARTING BOT CLIENT")
-    await bot.start()
-    print("[INFO]: STARTING PYTGCALLS CLIENT")
-    await call_py.start()
-    print("[INFO]: GENERATING CLIENT PROFILE")
-    await all_info(bot, user)
-    await idle()
-    print("[INFO]: STOPPING BOT")
-    await bot.stop()
+bot = Bot(
+    ":memory:",
+    API_ID,
+    API_HASH,
+    bot_token=BOT_TOKEN,
+    plugins=dict(root="zaidmusic"),
+)
 
+print(f"[INFO]: ZAID MUSIC VERSION 2.0 STARTED !")
 
-loop = asyncio.get_event_loop()
-loop.run_until_complete(mulai_bot())
+bot.start()
+run()
+idle()
