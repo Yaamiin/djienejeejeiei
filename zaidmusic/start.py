@@ -11,7 +11,7 @@ from config import (
     OWNER_NAME,
     UPDATES_CHANNEL,
 )
-from handlers import __version__
+from zaidmusic import __version__
 from helpers.decorators import sudo_users_only
 from helpers.filters import command
 from pyrogram import Client, filters
@@ -65,13 +65,13 @@ async def start_private(client: Client, message: Message):
                     )
                 ],
                 [
-                    InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton("❤️ Donate", url=f"https://t.me/Timesisnotwaiting"),
+                    InlineKeyboardButton("Commands", callback_data="cbcmds"),
+                    InlineKeyboardButton("Donate", url=f"https://t.me/Timesisnotwaiting"),
                     InlineKeyboardButton("Basic Guide", url=f"https://telegra.ph/𝗕ooo--‌ᴀꜰᴋ-ᴏꜰꜰʟɪɴᴇ-11-12-16"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "👥 Group", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "Group", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
                         "📣 Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
@@ -79,7 +79,7 @@ async def start_private(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "🌐 Source Code", url="https://github.com/Itsunknown-12/Zaid-Vc-Player"
+                        "Source Code", url="https://github.com/Itsunknown-12/Zaid-Vc-Player"
                     )
                 ],
             ]
