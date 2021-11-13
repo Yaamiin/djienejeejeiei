@@ -59,15 +59,15 @@ async def controlset(_, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⏸", callback_data="cbpause"),
-                    InlineKeyboardButton("▶️", callback_data="cbresume"),
+                    InlineKeyboardButton("⏸ pause", callback_data="cbpause"),
+                    InlineKeyboardButton("▶️ resume", callback_data="cbresume"),
                 ],
                 [
-                    InlineKeyboardButton("⏩", callback_data="cbskip"),
-                    InlineKeyboardButton("⏹ ", callback_data="cbend"),
+                    InlineKeyboardButton("⏩ skip", callback_data="cbskip"),
+                    InlineKeyboardButton("⏹ stop", callback_data="cbend"),
                 ],
-                [InlineKeyboardButton("⛔", callback_data="cbdelcmds")],
-                [InlineKeyboardButton("🗑, callback_data="close")],
+                [InlineKeyboardButton("⛔ anti cmd", callback_data="cbdelcmds")],
+                [InlineKeyboardButton("🗑 Close", callback_data="close")],
             ]
         ),
     )
