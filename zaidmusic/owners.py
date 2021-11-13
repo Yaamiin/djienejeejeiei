@@ -19,8 +19,8 @@ from config import (
 )
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError
-from handlers.song import get_text, humanbytes
-from handlers import __version__
+from zaidmusic.song import get_text, humanbytes
+from zaidmusic import __version__
 from helpers.database import db
 from helpers.dbtools import main_broadcast_handler
 from helpers.decorators import sudo_users_only
