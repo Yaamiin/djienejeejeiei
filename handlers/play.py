@@ -49,12 +49,12 @@ PLAYMSG_BUTTONS = InlineKeyboardMarkup(
 async def play(_, message: Message):
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
 
-    response = await message.reply_text("**Processing Your Song 😇...**")
+    response = await message.reply_text("🔎")
 
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"Bruh! Videos longer than `{DURATION_LIMIT}` minute(s) aren’t allowed, the provided audio is {round(audio.duration / 60)} minute(s) 😒"
+                f"ɴᴏᴛᴇ: ꜱᴏɴɢ ɴᴏᴛ ʟᴏɴɢᴇʀ ᴛʜᴀɴ `{DURATION_LIMIT}` 😒"
             )
 
         file_name = audio.file_unique_id + "." + (
@@ -101,7 +101,7 @@ async def play(_, message: Message):
         file = await converter.convert(youtube.download(url))
 
     if message.chat.id in callsmusic.active_chats:
-        thumb = THUMB_URL
+        thumb = ZAID_QUE
         position = await queues.put(message.chat.id, file=file)
         MENTMEH = message.from_user.mention()
         await response.delete()
@@ -133,7 +133,7 @@ async def nplay(_, message: Message):
 
     global que
     
-    lel = await message.reply_text("**Processing Your Song 😇...**")
+    lel = await message.reply_text("⚡")
     user_id = message.from_user.id
     user_name = message.from_user.first_name
 
