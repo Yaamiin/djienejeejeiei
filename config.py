@@ -23,12 +23,12 @@ BOT_USERNAME = os.environ.get("BOT_USERNAME") # Your Bot's Username without "@"
 DATABASE_URL = os.environ.get("DATABASE_URL") #mongo database url for more info contact in support group
 LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL")) # Your Log Channel! Make a private channel and get it's ID
 BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", False)) # If you need to broadcast messages as a copy or Forwarded Message
-THUMB_URL = os.environ.get("THUMB_URL", "https://telegra.ph/file/a6b00f1c682e9ecc7ca72.jpg")
+THUMB_URL = os.environ.get("THUMB_URL", "https://telegra.ph/file/0bb51f04fa6fe2252c945.jpg")
 ZAID_QUE = os.environ.get("ZAID_QUE", "https://telegra.ph/file/c16cbc1b51444436477c6.jpg")
 UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "SUPERIOR_BOTS")
 ZAID_SUPPORT = os.environ.get("ZAID_SUPPORT", "SUPERIOR_SUPPORT")
 
-# Your ARQ API Key
+# SOON ADDING 
 ARQ_API_KEY = getenv("ARQ_API_KEY")
 # Don't Change Anything Here
 ARQ_API_URL = "https://thearq.tech/"
@@ -40,6 +40,6 @@ UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", "https://github.com/itsunknown-1
 U_BRANCH = "master"
 HEROKU_URL = fetch_heroku_git_url(HEROKU_API_KEY, HEROKU_APP_NAME)
 
-# Versions
+# HEHE
 z_version = "v2.0.2.1"
 zaidub_version = "v2.0"
