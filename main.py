@@ -18,7 +18,7 @@ bot = Bot(
     plugins=dict(root="zaidmusic"),
 )
 
-print(f"[INFO]: ZAID MUSIC VERSION 2.0 STARTED !")
+print(f"[INFO]: ZAID MUSIC VERSION 3.0 STARTED !")
 
 bot.start()
 run()
