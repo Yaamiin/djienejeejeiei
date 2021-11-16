@@ -14,12 +14,12 @@
             "description": "fill with your bot token from @BotFather",
             "required": true
         },
-        "BOT_NAME": {
-            "description": "fill with your music bot name.",
+        "LOG_CHANNEL": {
+            "description": "fill there channel/group id make sure start with -100",
             "required": true,
             "value": ""
         },
-        "OWNER_ID": {
+        "BOT_OWNER": {
             "description": "fill with your telegram id as the owner of the bot",
             "required": true,
             "value": ""
@@ -61,10 +61,10 @@
             "required": false,
             "value": "Superior_Bots"
         },
-        "GROUP_SUPPORT": {
-            "description": "if you have group fill the group username here without @",
+        "DATABASE_URL": {
+            "description": "mongo db url leave if u don't have",
             "required": false,
-            "value": "Superior_support"
+            "value": "mongodb+srv://ZAID3:ZAID3@cluster0.nb30b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
         }
     },
     "buildpacks": [
