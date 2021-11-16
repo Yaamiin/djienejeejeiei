@@ -1,13 +1,7 @@
-import requests
-from pytgcalls import idle
-from callsmusic import run
 from pyrogram import Client as Bot
-from config import API_HASH, API_ID, BG_IMAGE, BOT_TOKEN
 
-
-response = requests.get(BG_IMAGE)
-with open("./etc/foreground.png", "wb") as file:
-    file.write(response.content)
+from callsmusic import run
+from config import API_ID, API_HASH, BOT_TOKEN, SUDO_USERS
 
 
 bot = Bot(
@@ -15,11 +9,10 @@ bot = Bot(
     API_ID,
     API_HASH,
     bot_token=BOT_TOKEN,
-    plugins=dict(root="zaidmusic"),
+    plugins=dict(root="handlers")
 )
 
-print(f"[INFO]: ZAID MUSIC VERSION 3.0 STARTED !")
+print(f"[INFO]: ZAID MUSIC VERSION 2.0 STARTED !")
 
 bot.start()
 run()
-idle()

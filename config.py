@@ -1,48 +1,45 @@
 import os
 from os import getenv
-from dotenv import load_dotenv
-from helpers.uptools import fetch_heroku_git_url
 
-if os.path.exists("local.env"):
-    load_dotenv("local.env")
+from pyrogram import Client
+from dotenv import load_dotenv
+from helpers.modhelps import fetch_heroku_git_url
 
 load_dotenv()
-que = {}
-admins = {}
+
 SESSION_NAME = getenv("SESSION_NAME", "session")
 BOT_TOKEN = getenv("BOT_TOKEN")
-BOT_NAME = getenv("BOT_NAME", "Zaid Music")
-BG_IMAGE = getenv("BG_IMAGE", "https://telegra.ph/file/eed465a7e88f39877304f.png")
-THUMB_IMG = getenv("THUMB_IMG", "https://telegra.ph/file/eed465a7e88f39877304f.png")
-AUD_IMG = getenv("AUD_IMG", "https://telegra.ph/file/a61493ca49e9e15087d35.png")
-QUE_IMG = getenv("QUE_IMG", "https://telegra.ph/file/024a4d4511a5e02e20b72.png")
-CMD_IMG = getenv("CMD_IMG", "https://telegra.ph/file/2a15ba0b81f06eea41c59.png")
-ALIVE_IMG = getenv("ALIVE_IMG", "https://telegra.ph/file/acbcbdd8867c6161550cb.png")
+
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
-BOT_USERNAME = getenv("BOT_USERNAME", "Zaid2_Robot")
-ASSISTANT_NAME = getenv("ASSISTANT_NAME", "zaid2_Assistant")
-GROUP_SUPPORT = getenv("GROUP_SUPPORT", "Superior_Support")
-UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "Superior_bots")
-# fill there username without @
-OWNER_NAME = getenv("OWNER_NAME", "Timesisnotwaiting")
-# fill with your nickname
-ALIVE_NAME = getenv("ALIVE_NAME", "Zaid")
-# fill with your id as the owner of the bot
-OWNER_ID = int(os.environ.get("OWNER_ID"))
-DATABASE_URL = os.environ.get("DATABASE_URL")  # fill with your mongodb url
-# make a private channel and get the channel id
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL"))
-# just fill with True or False (optional)
-BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", "False"))
+
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "60"))
-COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ ! .").split())
-SUDO_USERS = list(map(int, getenv("SUDO_USERS").split()))
-# UPDATER CONFIG
-U_BRANCH = "main"
+
+COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ . !").split())
+
+BOT_OWNER = int(os.environ.get("BOT_OWNER")) # Your Telegram User ID
+SUDO_USERS = list(map(int, getenv("SUDO_USERS").split())) # Sudo users IDs, They are admins everywhere
+BOT_USERNAME = os.environ.get("BOT_USERNAME") # Your Bot's Username without "@"
+DATABASE_URL = os.environ.get("DATABASE_URL") #mongo database url for more info contact in support group
+LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL")) # Your Log Channel! Make a private channel and get it's ID
+BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST_AS_COPY", False)) # If you need to broadcast messages as a copy or Forwarded Message
+THUMB_URL = os.environ.get("THUMB_URL", "https://telegra.ph/file/a6b00f1c682e9ecc7ca72.jpg")
+ZAID_QUE = os.environ.get("ZAID_QUE", "https://telegra.ph/file/c16cbc1b51444436477c6.jpg")
+UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", "SUPERIOR_BOTS")
+ZAID_SUPPORT = os.environ.get("ZAID_SUPPORT", "SUPERIOR_SUPPORT")
+
+# Your ARQ API Key
+ARQ_API_KEY = getenv("ARQ_API_KEY")
+# Don't Change Anything Here
+ARQ_API_URL = "https://thearq.tech/"
+
+# Updator Configs
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
 HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
-UPSTREAM_REPO = os.environ.get(
-    "UPSTREAM_REPO", "https://github.com/itsunknown-12/Zaid-Vc-Player"
-)
+UPSTREAM_REPO = os.environ.get("UPSTREAM_REPO", "https://github.com/itsunknown-12/Zaid-Vc-Player")
+U_BRANCH = "master"
 HEROKU_URL = fetch_heroku_git_url(HEROKU_API_KEY, HEROKU_APP_NAME)
+
+# Versions
+z_version = "v2.0.2.1"
+zaidub_version = "v2.0"
