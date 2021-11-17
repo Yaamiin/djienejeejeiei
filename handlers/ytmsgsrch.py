@@ -1,7 +1,6 @@
 import logging
 
 from pyrogram.types import Message
-from search_engine_parser import GoogleSearch
 from youtube_search import YoutubeSearch
 from pyrogram import Client, filters
 
