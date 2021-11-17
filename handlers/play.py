@@ -30,15 +30,12 @@ async def _(bot: Client, cmd: command):
 # Some Secret Buttons
 PLAYMSG_BUTTONS = InlineKeyboardMarkup(
     [
-                InlineKeyboardButton(
-                    "☑️ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/Superior_Bots"
-                ),
+            [
                 InlineKeyboardButton("ꜱᴜᴘᴘᴏʀᴛ ⚡", url=f"https://t.me/Superior_Support"),
+                InlineKeyboardButton("☑️ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/Superior_Bots"),
             ],
-                InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="close"),
-            ],
-                
-    ]
+            [InlineKeyboardButton("🗑 ᴄʟᴏsᴇ", callback_data="close")],
+        ]
 )
 
 
