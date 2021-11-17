@@ -3,7 +3,6 @@ tgcrypto
 youtube-search
 git+https://github.com/Itsunknown-12/yt-dl@master
 pytgcalls
-youtubesearchpython
 python-dotenv
 requests
 aiohttp
