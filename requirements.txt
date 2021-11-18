@@ -4,6 +4,7 @@ youtube-search
 git+https://github.com/Itsunknown-12/yt-dl@master
 pytgcalls
 python-dotenv
+youtube_search_python
 requests
 aiohttp
 aiofiles
