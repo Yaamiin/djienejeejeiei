@@ -19,3 +19,4 @@ pymongo
 dnspython
 heroku3
 gitpython
+search_engine_parser
