@@ -9,7 +9,7 @@ requests
 aiohttp
 aiofiles
 asyncio
-ffmpeg-python
+ffmpeg
 pillow
 future
 psutil
