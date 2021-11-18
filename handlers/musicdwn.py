@@ -20,6 +20,7 @@ from aiohttp import ClientSession
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, MessageNotModified
 from pyrogram.types import Message,InlineKeyboardMarkup, InlineKeyboardButton
+youtubesearchpython import SearchVideos
 from youtube_search import YoutubeSearch
 
 from config import BOT_USERNAME, UPDATES_CHANNEL
