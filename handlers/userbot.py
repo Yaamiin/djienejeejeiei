@@ -113,7 +113,7 @@ async def getlogs(client: ZAIDUB, message: Message, app_):
 @ZAIDUB.on_message(filters.private)
 async def sendpmlol(client: ZAIDUB, message: Message):
   ZAIDUB_ID = int((await ZAIDUB.get_me()).id)
-  if message.from_user.id == BOT_OWNER or message.from_user.id == NEXAUB_ID:
+  if message.from_user.id == BOT_OWNER or message.from_user.id == ZAIDUB_ID:
     return
   pmlogchat = PM_LOG_CHAT_ID
   userinfo = await ZAIDUB.get_users(user_ids=message.from_user.id)
