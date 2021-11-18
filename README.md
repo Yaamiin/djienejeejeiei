@@ -73,7 +73,7 @@
 ## ᴅᴇᴘʟᴏʏ ᴏɴ ʀᴀɪʟᴡᴀʏ 🚄
 ꜰᴏʀ ᴅᴇᴘʟᴏʏ ᴏɴ ʀᴀɪʟᴡᴀʏ ᴍᴀᴋᴇ [Necessary Variables Here](https://github.com/Itsunknown-12/Zaid-Vc-Player), ᴜ ʜᴀᴠᴇ ᴛᴏ ꜰɪʟʟ.
 
-[![ᴢᴀɪᴅ+ᴅᴇᴘʟᴏʏ+ᴏɴ+ʀᴀɪʟᴡᴀʏ](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/Itsunknown-12/Zaid-Vc-Player&envs=SESSION_NAME,BOT_TOKEN,BOT_USERNAME,ASSISTANT_NAME,BOT_OWNER,DATABASE_URL,LOG_CHANNEL,UPDATES_CHANNEL,API_ID,API_HASH,SUDO_USERS,BOT_OWNER,DURATION_LIMIT)
+[![ᴢᴀɪᴅ+ᴅᴇᴘʟᴏʏ+ᴏɴ+ʀᴀɪʟᴡᴀʏ](https://railway.app/button.svg)](https://railway.app/new/template?template=https://github.com/Itsunknown-12/Zaid-Vc-Player&envs=SESSION_NAME,BOT_TOKEN,BOT_USERNAME,ASSISTANT_NAME,BOT_OWNER,DATABASE_URL,LOG_CHANNEL,UPDATES_CHANNEL,API_ID,API_HASH,SUDO_USERS,DURATION_LIMIT)
 
 ### ꜱᴘᴇᴄɪᴀʟ ᴄʀᴇᴀᴅɪᴛꜱ 💖
 - Veez Music
