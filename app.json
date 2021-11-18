@@ -22,7 +22,7 @@
         "BOT_OWNER": {
             "description": "fill with your telegram id as the owner of the bot",
             "required": true,
-            "value": ""
+            "value": "BOT_OWNER"
         },
         "BOT_USERNAME": {
             "description": "fill with your bot username without @",
