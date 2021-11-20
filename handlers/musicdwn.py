@@ -113,7 +113,7 @@ async def progress(current, total, message, start, type_of_ps, file_name=None):
                 pass
 
 
-@Client.on_message(filters.command(['yts', f'yts@{BOT_USERNAME}']))
+@Client.on_message(filters.command(['yts', f'song']))
 def song(client, message):
 
     user_id = message.from_user.id 
