@@ -22,6 +22,8 @@
 
 ## ᴄᴏᴍᴍᴀɴᴅꜱ 
 
+[CLICK HERE](https://t.me/SUPERIOR_BOTS/160)
+
 
 ## 🔎 ꜱᴜᴘᴘᴏʀᴛ ɪɴʟɪɴᴇ ꜱᴇᴀʀᴄʜ
 
