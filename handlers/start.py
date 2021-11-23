@@ -37,7 +37,7 @@ async def start_(client: Client, message: Message):
         photo=f"https://telegra.ph/file/899cf677d90a10b907a15.png",
         caption=f"""**ᴀ ᴀᴅᴠᴀɴᴄᴇᴅ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜꜱɪᴄ ʙᴏᴛ ʙᴀꜱᴇᴅ ᴏɴ ᴍᴏɴɢᴏᴅʙ ᴡɪᴛʜ ᴀɪ ꜰᴇᴀᴛᴜʀᴇꜱ ...
 💞 ᴛʜᴀɴᴋꜱ ꜰᴏʀ  
-ᴜꜱɪɴɢ [ᴢᴀɪᴅ ʙᴏᴛꜱ](t.me/superior_bots) ...
+ᴜꜱɪɴɢ [Sᴏᴍᴀʟɪʙᴏᴛs 🇸🇴](https://t.me/Somalibots) ...
 **""",
     reply_markup=InlineKeyboardMarkup(
             [
@@ -48,10 +48,10 @@ async def start_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ", url=f"https://t.me/SUPERIOR_BOTS/160"
+                        "ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ", url=f"https://telegra.ph/Copyright-11-23"
                     ),
                     InlineKeyboardButton(
-                        "ꜱᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url="https://github.com/itsunknown-12/Zaid-Vc-Player"
+                        "Oᴡɴᴇʀ👿", url="https://t.me/Yaamiintor"
                     )
                 ],
                 [
@@ -59,7 +59,7 @@ async def start_(client: Client, message: Message):
                         "📢 ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                     InlineKeyboardButton(
-                        "ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ 🇮🇳", url="https://t.me/{ZAID_SUPPORT}"
+                        "ꜱᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ 🇸🇴", url="https://t.me/{ZAID_SUPPORT}"
                     )
                 ]
                 
@@ -77,7 +77,7 @@ async def start(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "💥 ᴊᴏɪɴ ʜᴇʀᴇ ᴀɴᴅ sᴜᴘᴘᴏʀᴛ 💞", url=f"https://t.me/superior_Support")
+                        "💥 Hᴀᴅɪɪ ʙᴏᴛ ʟᴀɢᴜ sᴀᴍᴇʏɴᴀʏᴏ 💞", url=f"https://t.me/Somalibots")
                 ]
             ]
         ),
@@ -93,7 +93,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "💥 ᴄʟɪᴄᴋ ᴍᴇ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ 💞", url=f"https://github.com/itsunknown-12/Zaid-Vc-Player")
+                        "💥 Hᴀᴅɪɪ ʙᴏᴛ ʟᴀɢᴜ sᴀᴍᴇʏɴᴀʏᴏ 💞", url=f"https://t.me/Somalibots")
                 ]
             ]
         ),
